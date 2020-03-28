@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="{{ .Site.BaseURL }}"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122842275-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-122842275-1');
+
+    </script>
+
+    <title>@kathyia Projects</title>
+    <link href="/stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="/images/favicon.ico" rel="icon" sizes="16x16" type="image/gif">
+
+</head>
+<body>
+<div class="topnav" id="myTopnav">
+    <a href="/">Home</a>
+    <a href="/about">About Me & Contact</a>
+    <div class="dropdown">
+        <button class="dropbtn">Resources<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content">
+            <a href="/resources">Resources</a>
+            <a href="/resources/working-agreements">Working Agreements</a>
+            <a href="/resources/managing-work">Managing Work</a>
+            <a href="/resources/become-scrum-master">Become a Scrum Master</a>
+            <a href="/resources/book-recommendations">Book Recommendations</a>
+        </div>
+    </div>
+    <a href="/speaking">Speaking</a>
+    <a href="/i">Projects</a>
+    <a class="icon" href="javascript:void(0);" onclick="myFunction()" style="font-size:14px;">&#9776;</a>
+</div>
+
+<h1>Find New Music</h1>
+
+<img src="/images/WolframCorporateLogo.png" width="30">
+<h3>Click to return a random music artist </h3>
+<button onclick="rmaButton()" type="submit">Give Me Random Musician</button>
+
+<script>
+function rmaButton() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+             alert(this.responseText);
+         }
+    };
+    xhttp.open("GET", "https://api.wolframalpha.com/v2/query?input=random+artist&appid=GWVQWE-3XQ7947X7Q", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send();
+}
+
+</script>
+
+<h3>Wolfram|Alpha Widget:</h3>
+
+<script id="WolframAlphaScript9baa50d6ead610e02186e093d3969757"
+        src="//www.wolframalpha.com/widget/widget.jsp?id=9baa50d6ead610e02186e093d3969757&theme=gray&output=popup"
+        type="text/javascript"></script>
+
+<div class="footer">
+    ©2016-2019 <a href="https://twitter.com/kathyia">@kathyia Twitter</a> | <a
+        href="https://www.linkedin.com/in/kathyiandersen/">LinkedIn</a>
+</div>
+</body>
+</html>
